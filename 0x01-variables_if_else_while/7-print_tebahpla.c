@@ -12,7 +12,7 @@ int main(void)
 	char alphabets[] = "abcdefghijklmnopqrstuvwxyz";
 	size_t alpha_len = strlen(alphabets);
 
-	for (i = (signed int) alpha_len - 1; i = 0;  i--)
+	for (i = (signed int) alpha_len - 1; i >= 0;  i--)
 		putchar(alphabets[i]);
 	putchar('\n');
 	return (0);
