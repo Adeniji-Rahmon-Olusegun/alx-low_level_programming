@@ -14,12 +14,15 @@ int main(void)
 
 	for (i = 0; i <= (signed int) str_len - 1; i++)
 	{
-		if (alpha[i] != 'q' || alpha[i] != 'e')
-		{
-			putchar(alpha[i]);
-		} else
+		if (alpha[i] == 'q'))
 		{
 			{};
+		} else if (alpha[i] == 'e')
+		{
+			{};
+		} else 
+		{
+			putchar(alpha[i]);
 		}
 	}
 	putchar('\n');
