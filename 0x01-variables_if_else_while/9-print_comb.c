@@ -16,9 +16,13 @@ int main(void)
 	{
 		putchar('0' + arr[i]);
 		for (i = 0; i <= 1; i++)
+		{
 			putchar(' ');
+		}
 			for (i = 0; i <= 1; i++)
+			{
 				putchar(',');
+			}
 	}
 	putchar('\n');
 	return (0);
