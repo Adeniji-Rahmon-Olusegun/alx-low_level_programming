@@ -17,7 +17,7 @@ int main(void)
 	for (i = 0; i <= lim - 1; i++)
 		putchar('0' + i);
 	for (j = 0; j <= (signed int) alpha_len - 1; j++)
-		putchar(upper_alpha[j]);
+		putchar(lower_alpha[j]);
 	putchar('\n');
 	return (0);
 }
