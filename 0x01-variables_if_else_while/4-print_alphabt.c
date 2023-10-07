@@ -19,7 +19,7 @@ int main(void)
 			putchar(alpha[i]);
 		} else
 		{
-			{}
+			{};
 		}
 	putchar('\n');
 	return (0);
