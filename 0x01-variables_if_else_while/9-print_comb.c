@@ -16,13 +16,15 @@ int main(void)
 	for (i = 0; i <= len_arr - 1; i++)
 	{
 		putchar('0' + arr[i]);
-
-		j = 1;
-		while (j <= 1)
+		if (i <= 8)
 		{
-			putchar(',');
-			putchar(' ');
-			j++;
+			j = 1;
+			while (j <= 1)
+			{
+				putchar(',');
+				putchar(' ');
+				j++;
+			}
 		}
 	}
 	putchar('\n');
