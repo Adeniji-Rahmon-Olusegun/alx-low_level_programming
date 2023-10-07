@@ -13,11 +13,13 @@ int main(void)
 	int len_arr = sizeof(arr) / sizeof(arr[0]);
 
 	for (i = 0; i <= len_arr - 1; i++)
+	{
 		putchar('0' + arr[i]);
-	for (i = 0; i <= len_arr - 2; i++)
-		putchar(',');
-	for (i = 0; i <= len_arr - 2; i++)
-		putchar(' ');
+		for (i = 0; i <= 1; i++)
+			putchar(' ');
+			for (i = 0; i <= 1; i++)
+				putchar(',');
+	}
 	putchar('\n');
 	return (0);
 }
