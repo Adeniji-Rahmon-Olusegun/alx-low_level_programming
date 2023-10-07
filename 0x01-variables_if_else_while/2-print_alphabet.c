@@ -14,6 +14,6 @@ int main(void)
 
 	for (i = 0; i <= (signed int) alpha_len; i++)
 		putchar(alphabets[i]);
-	putchar(' ');
+	putchar('\n');
 	return (0);
 }
