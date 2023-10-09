@@ -19,7 +19,7 @@ int main(void)
 			putchar('0' + i);
 			putchar(' ');
 			putchar('0' + j - 1);
-			putcahr('0' + j);
+			putchar('0' + j);
 
 			if (i != 98)
 			{
