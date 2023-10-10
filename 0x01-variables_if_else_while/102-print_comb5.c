@@ -10,23 +10,29 @@ int main(void)
 {
 	int i;
 	int j;
+	int k;
+	int l;
 
 	for (i = 0; i < 100; i++)
 	{
 		for (j = i + 1; j < 100; j++)
-		{
-			putchar('0' + i);
-			putchar('0' + i);
-			putchar(' ');
-			putchar('0' + (j - 1));
-			putchar('0' + j);
-
-			if (i != 98)
+		
+			if (i < 10)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar('0' + 0);
+				putchar('0' + i);
+			} else
+			{
+				putchar('0' + i);
 			}
-		}
+			putchar(' ');
+			
+			if (j < 10)
+			{
+				putchar('0' + 0);
+				putchar('0' + j)
+			}
+			
 	}
 	putchar('\n');
 	return (0);
