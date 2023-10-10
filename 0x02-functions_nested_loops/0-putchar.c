@@ -1,8 +1,19 @@
 #include "main.h"
+#include <unistd.h>
+/**
+ * _putchar - prints character to stdout
+ * Return: character to print
+ */
+int _putchar(char character)
+{
+	return (write(1, &character, 1));
+}
+
 /**
  * main - prints _putchar
  * Return: 0 if success
  */
+
 
 int main(void)
 {
