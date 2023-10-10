@@ -8,7 +8,7 @@
 
 int _isalpha(int c)
 {
-	if ((int)(c) != c)
+	if (c != (int)(c))
 	{
 		if (c >= (int)('a') && c <= (int)('z'))
 		{
