@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 /**
  * print_alphabet - prints all the alphabets
  * @void: receives no argument
