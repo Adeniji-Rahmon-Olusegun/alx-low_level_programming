@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * times_table - prints the 9x time table
@@ -15,14 +16,7 @@ void times_table(void)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-			result = i * j;
-
-			_putchar('0' + result);
-			if (j < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			printf("%d, ", (i * j));
 		}
 		_putchar('\n');
 	}
