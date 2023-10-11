@@ -7,10 +7,11 @@
 
 int main(void)
 {
+	int i;
 	int n = 1024;
 	int result = 0;
 
-	for (i = 0; i < 1024; i++)
+	for (i = 0; i < n; i++)
 	{
 		if (i % 3 == 0)
 		{
