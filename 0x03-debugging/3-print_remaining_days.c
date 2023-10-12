@@ -12,42 +12,26 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-	int i;
-	int month_sum = 0;
-	int days_unspent;
-	int days_spent_so_far_in_year;
-	int months_in_year[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-	if ((year % 4 == 0 || year % 400 == 0) && (year % 100 != 0))
+	if ((year % 4 == 0 &&  year % 100 != 0) || (year % 400 == 0))
 	{
-		months_in_year[1] = 29;
-
-		for (i = 0; i < month - 1; i++)
+		if (month >= 2 && day >= 60)
 		{
-			month_sum += months_in_year[i];
+			day++;
 		}
-
-		days_spent_so_far_in_year = month_sum + day;
-		days_unspent = 366 - days_spent_so_far_in_year;
-
-		printf("Day of the year: %d\n", days_spent_so_far_in_year);
-		printf("Remaining days: %d\n", days_unspent);
-	}
-	else if (day < 1 || day > 31 || month < 1 || month > 31)
-	{
-		printf("Invalid date: %02d/%02d/%04d\n", month, day, year);
+		printf("Day of the year: %d\n", day);
+		printf("Remaining days: %d\n", 366 - day);
 	}
 	else
 	{
-		for (i = 0; i < months - 1; i++)
+		if (month == 2 && day == 60)
 		{
-			month_sum += months_in_year[i];
+			printf("Invalid date: %02d//%02d//%40d\n", month, day - 31, year);
 		}
-
-		days_spent_so_far_in_year = month_sum + day;
-		days_unspent = 365 - days_spent_so_far_in_year;
-
-		printf("Day of the year: %d\n", days_spent_so_far_in_year);
-		printf("Remaining days: %d\n", days_unspent);
+		else
+		{
+			printf("Day of the year: %d\n", day);
+			printf("Remaining days: %d\n", 365 - day);
+		}
 	}
-}
+}	
