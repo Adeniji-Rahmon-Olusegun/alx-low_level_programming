@@ -22,7 +22,7 @@ void print_remaining_days(int month, int day, int year)
 	{
 		months_in_year[1] = 29;
 
-		for (i = 0; i < months_in_year - 1; i++)
+		for (i = 0; i < month - 1; i++)
 		{
 			month_sum += months_in_year[i];
 		}
@@ -39,7 +39,7 @@ void print_remaining_days(int month, int day, int year)
 	}
 	else
 	{
-		for (i = 0; i < months_in_year - 1; i++)
+		for (i = 0; i < months - 1; i++)
 		{
 			month_sum += months_in_year[i];
 		}
