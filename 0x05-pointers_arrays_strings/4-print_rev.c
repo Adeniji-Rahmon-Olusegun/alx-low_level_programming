@@ -17,8 +17,6 @@ void print_rev(char *s)
 		end++;
 	}
 
-	end--;
-
 	while (start < end)
 	{
 		c = *start;
