@@ -20,6 +20,8 @@ void rev_string(char *s)
 		counter++;
 	}
 
+	counter--;
+
 	while (j < counter)
 	{
 		c = s[j];
