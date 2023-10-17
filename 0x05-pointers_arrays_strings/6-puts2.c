@@ -9,6 +9,7 @@
 void puts2(char *str)
 {
 	int i, j;
+	int counter;
 
 	counter = 0;
 
