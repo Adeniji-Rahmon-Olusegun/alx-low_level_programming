@@ -34,7 +34,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	else if (n != src_len_tracker)
 	{
-		for (k = 0; k < n; k++)
+		for (k = 0; k <= n; k++)
 		{
 			dest[k + dest_len_tracker] = src[k];
 		}
