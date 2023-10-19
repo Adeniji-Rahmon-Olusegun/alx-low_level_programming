@@ -18,7 +18,7 @@ char *_strcat(char *dest, char *src)
 		dest_len_tracker++;
 	}
 
-	for (j = 0; src[i] != '\0'; j++)
+	for (j = 0; src[j] != '\0'; j++)
 	{
 		src_len_tracker++;
 	}
