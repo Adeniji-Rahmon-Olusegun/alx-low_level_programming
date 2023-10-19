@@ -32,12 +32,20 @@ char *_strncat(char *dest, char *src, int n)
 			dest[k + dest_len_tracker] = src[k];
 		}
 	}
-	else if (n != src_len_tracker)
+	else if (n < src_len_tracker)
 	{
-		for (k = 0; k <= n; k++)
+		for (k = 0; k < n; k++)
 		{
 			dest[k + dest_len_tracker] = src[k];
 		}
+	}
+	else if (n > src_len_tracker)
+	{
+		for (k = 0; k < src_len_tracker; k++)
+		{
+			dest[k + dest_len_tracker] = src[k];
+		}
+		break;
 	}
 
 	return (dest);
