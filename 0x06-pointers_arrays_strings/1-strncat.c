@@ -45,7 +45,6 @@ char *_strncat(char *dest, char *src, int n)
 		{
 			dest[k + dest_len_tracker] = src[k];
 		}
-		break;
 	}
 
 	return (dest);
