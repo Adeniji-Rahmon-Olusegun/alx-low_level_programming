@@ -9,13 +9,24 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	int i, j;
+	static char p_c[100];
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	j = 0;
+
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			return (s[i]);
+			while (s[i] != '\0')
+			{
+				p_c[j] = s[i];
+
+				i++;
+				j++;
+			}
+			return (p_c);
 		}
 	}
 
