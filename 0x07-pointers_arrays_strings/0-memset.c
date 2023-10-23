@@ -13,15 +13,14 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (i < n)
-		{
-			s[i] = b;
-		}
-	}
+	i = 0;
 
-	s[n];
+	while (i < n)
+	{
+		s[i] = b;
+
+		i++;
+	}
 
 	return (s);
 }
