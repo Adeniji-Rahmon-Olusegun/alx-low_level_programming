@@ -27,6 +27,7 @@ char *_strchr(char *s, char c)
 				i++;
 				j++;
 			}
+			p_c[j] = '\0';
 			return (p_c);
 		}
 		i++;
