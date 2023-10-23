@@ -11,7 +11,7 @@
 char *_strchr(char *s, char c)
 {
 	int i, j;
-	static char p_c[200];
+	static char p_c[400];
 
 	i = 0;
 	j = 0;
