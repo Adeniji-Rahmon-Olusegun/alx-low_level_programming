@@ -1,5 +1,4 @@
-#include "maih.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
  * _memcpy - copies n bytes from source to
