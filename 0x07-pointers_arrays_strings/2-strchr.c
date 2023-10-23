@@ -29,6 +29,7 @@ char *_strchr(char *s, char c)
 			}
 			return (p_c);
 		}
+		i++;
 	}
 
 	return (NULL);
