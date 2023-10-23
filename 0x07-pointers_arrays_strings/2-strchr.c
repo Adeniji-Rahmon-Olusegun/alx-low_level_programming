@@ -10,27 +10,13 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, j;
-	static char p_c[700];
-
-	i = 0;
-	j = 0;
-
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == c)
+		if (*s == c)
 		{
-			while (s[i] != '\0')
-			{
-				p_c[j] = s[i];
-
-				i++;
-				j++;
-			}
-			p_c[j] = '\0';
-			return (p_c);
+			return (s);
 		}
-		i++;
+		s++;
 	}
 
 	return (NULL);
