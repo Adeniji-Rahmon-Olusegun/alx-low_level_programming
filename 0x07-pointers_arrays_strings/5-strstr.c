@@ -2,27 +2,42 @@
 #include <stdlib.h>
 
 /**
- * _strpbrk - finds first occurence of the substring
+ * _strstr - finds first occurence of the substring
  * in the main string
- * @s: main string
- * @accept: substring
+ * @haystack: main string
+ * @needle: substring
  * Return: pointer
  */
 
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
 	int i, j;
+	int haystack_len, needle_len;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				return (&s[i]);
-			}
-		}
+		haystack_len++;
 	}
 
+	for (j = 0 ; needle[j] != '\0'; j++)
+	{
+		needle_len++;
+	}
+
+	for (i = 0; i < haystack_len; i++)
+	{
+		for (j = 0; j < needle_len; j++)
+		{
+			if (haystack[i + j] != needle[j])
+			{
+				break;
+			}
+		}
+
+		if (j == needle_len)
+		{
+			return (&haystack[i]);
+		}
+	}
 	return (NULL);
 }
