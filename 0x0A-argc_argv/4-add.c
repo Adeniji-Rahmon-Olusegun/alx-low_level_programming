@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 				}
 			}
 
-			if (!is_numeric)
+			if (!is_a_number)
 			{
 				printf("Error\n");
 				exit(1);
