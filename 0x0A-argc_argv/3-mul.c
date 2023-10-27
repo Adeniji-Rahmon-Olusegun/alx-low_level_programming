@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
 
 	result = arg1 * arg2;
 
-	if (argc - 1 > 2 || argc - 1 < 2)
+	if ((argc - 1) > 2 || (argc - 1) < 2)
 	{
-		printf("Error");
+		printf("Error\n");
 
 		return (1);
 	}
