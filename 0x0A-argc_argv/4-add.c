@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			{
 				if (!isdigit(argv[i][j]))
 				{
-					is_numeric = 0;
+					is_a_number = 0;
 					break;
 				}
 			}
