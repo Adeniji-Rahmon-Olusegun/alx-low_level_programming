@@ -17,4 +17,8 @@ int _sqrt_recursion(int n);
 
 int _square_condition_checker(int n, int root_guess);
 
+int is_prime_number(int n);
+
+int prime_helper_function(int n, int div);
+
 #endif
