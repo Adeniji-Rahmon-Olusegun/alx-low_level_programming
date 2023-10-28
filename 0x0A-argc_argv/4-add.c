@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		for (string_checker = 0; string_checker < strlen(argv[i]); string_checker++)
+		for (string_checker = 0; argv[i][string_checker] != '\0'; string_checker++)
 		{
 			if (!isdigit(argv[i][string_checker]))
 			{
