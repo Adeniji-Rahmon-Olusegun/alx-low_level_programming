@@ -14,13 +14,13 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	size_t string_checker;
+	int string_checker;
 
 	int result;
 
 	if (argc == 1)
 	{
-		_putchar('0' +  0);
+		printf("%d\n", 0);
 
 		return (0);
 	}
