@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
+#include "main.h"
+
 /**
  * main - adds two number
  * @argc: argument count
@@ -17,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		printf("%d\n", 0);
+		_putchar('0' +  0);
 
 		return (0);
 	}
