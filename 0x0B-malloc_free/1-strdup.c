@@ -12,21 +12,21 @@ char *_strdup(char *str)
 {
 	char *ptr_strcpy;
 
-	int i, str_len_count = 0;
+	int i, str_len = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		str_len_count++;
+		str_len++;
 	}
 
-	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len_count + 1));
+	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len + 1));
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	if ((sizeof(char) * sizeof(str_len_count + 1)) < size_t (str_len_count + 1))
+	if (size_t (sizeof(char) * sizeof(str_len + 1)) < size_t (str_len + 1))
 	{
 		return (NULL);
 	}
@@ -38,7 +38,7 @@ char *_strdup(char *str)
 		ptr_strcpy++;
 		str++;
 	}
-	*ptr_strcpy[i] = '\0';
+	ptr_strcpy[i] = '\0';
 
 	return (ptr_strcpy);
 }
