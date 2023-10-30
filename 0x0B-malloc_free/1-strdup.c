@@ -26,6 +26,11 @@ char *_strdup(char *str)
 
 	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len + 1));
 
+	if ((sizeof(char) * sizeof(str_len + 1)) > (size_t) (str_len + 1))
+        {
+                return (NULL);
+        }
+
 	if (ptr_strcpy == NULL)
 	{
 		return (NULL);
