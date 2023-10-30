@@ -19,7 +19,7 @@ char *_strdup(char *str)
 		str_len_count++;
 	}
 
-	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_lencounter + 1));
+	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_lencount + 1));
 
 	if (str == NULL)
 	{
