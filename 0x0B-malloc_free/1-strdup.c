@@ -19,7 +19,7 @@ char *_strdup(char *str)
 		str_len_count++;
 	}
 
-	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_lencount + 1));
+	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len_count + 1));
 
 	if (str == NULL)
 	{
@@ -38,6 +38,7 @@ char *_strdup(char *str)
 		ptr_strcpy++;
 		str++;
 	}
+	*ptr_strcpy[i] = '\0';
 
 	return (ptr_strcpy);
 }
