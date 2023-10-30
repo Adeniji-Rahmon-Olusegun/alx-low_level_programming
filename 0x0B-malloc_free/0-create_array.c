@@ -27,5 +27,7 @@ char *create_array(unsigned int size, char c)
 		tracker++;
 	}
 
+	free(ptr_memblock);
+
 	return (ptr_memblock);
 }
