@@ -24,12 +24,12 @@ char *_strdup(char *str)
 		str_len++;
 	}
 
-	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len + 1));
-
 	if ((sizeof(char) * sizeof(str_len + 1)) > (size_t) (str_len + 1))
         {
                 return (NULL);
         }
+
+	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len + 1));
 
 	if (ptr_strcpy == NULL)
 	{
