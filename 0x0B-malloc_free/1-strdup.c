@@ -24,12 +24,12 @@ char *_strdup(char *str)
 		str_len++;
 	}
 
-	if ((sizeof(char) * sizeof(str_len + 1)) < (size_t) (str_len))
+	if ((sizeof(char) * (str_len + 1)) < (size_t) (str_len))
         {
                 return (NULL);
         }
 
-	ptr_strcpy = (char *)malloc(sizeof(char) * sizeof(str_len + 1));
+	ptr_strcpy = (char *)malloc(sizeof(char) * (str_len + 1));
 
 	if (ptr_strcpy == NULL)
 	{
@@ -44,7 +44,7 @@ char *_strdup(char *str)
 
 		i++;
 	}
-	/*ptr_strcpy[i] = '\0';*/
+	ptr_strcpy[i] = '\0';
 
 	return (ptr_strcpy);
 }
