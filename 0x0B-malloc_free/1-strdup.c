@@ -26,6 +26,11 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
+	if (ptr_strcpy == NULL)
+	{
+		return (NULL);
+	}
+
 	while (*str != '\0')
 	{
 		*ptr_strcpy = *str;
