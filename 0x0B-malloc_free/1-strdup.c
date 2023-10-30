@@ -31,12 +31,13 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	while (*str != '\0')
-	{
-		*ptr_strcpy = *str;
+	i = 0;
 
-		ptr_strcpy++;
-		str++;
+	while (str[i] != '\0')
+	{
+		*(ptr_strcpy + i) = str[i];
+
+		i++;
 	}
 	ptr_strcpy[i] = '\0';
 
