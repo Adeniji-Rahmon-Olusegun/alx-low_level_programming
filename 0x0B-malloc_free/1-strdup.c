@@ -24,7 +24,7 @@ char *_strdup(char *str)
 		str_len++;
 	}
 
-	if ((sizeof(char) * sizeof(str_len + 1)) >= (size_t) (str_len + 1))
+	if ((sizeof(char) * sizeof(str_len + 1)) < (size_t) (str_len))
         {
                 return (NULL);
         }
