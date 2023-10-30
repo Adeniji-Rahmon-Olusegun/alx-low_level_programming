@@ -20,14 +20,17 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
+	if (ptr_memblock == NULL)
+	{
+		return (NULL);
+	}
+
 	while (tracker < size)
 	{
 		*(ptr_memblock + tracker) = c;
 
 		tracker++;
 	}
-
-	free(ptr_memblock);
 
 	return (ptr_memblock);
 }
