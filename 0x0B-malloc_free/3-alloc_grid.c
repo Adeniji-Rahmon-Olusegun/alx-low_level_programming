@@ -10,13 +10,15 @@
 
 int **alloc_grid(int width, int height)
 {
-	int i, j;
+	int i, j, total_elements;
 	int **ptr_zeros;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
+
+	total_elements = width * height;
 
 	if ((sizeof(int) * total_elements) < (size_t)(4 * total_elements))
 	{
