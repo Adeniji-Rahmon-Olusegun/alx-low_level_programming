@@ -42,7 +42,7 @@ int **alloc_grid(int width, int height)
 		{
 			for (i--; i >= 0; i--)
 			{
-				free(ptr_zeros[k]);
+				free(ptr_zeros[i]);
 			}
 				
 			free(ptr_zeros);
