@@ -25,11 +25,11 @@ char *str_concat(char *s1, char *s2)
 
 	for (j = 0; s2[j] != '\0'; j++)
 		s2_len++;
-	/*
+	
 	if ((sizeof(char) * (s1_len + s2_len + 1)) < (size_t)(s1_len + s2_len + 1))
 	{
 		return (NULL);
-	}*/
+	}
 
 	ptr_concat_str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 
@@ -39,7 +39,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; s1[i] != '\0'; i++)
 		*(ptr_concat_str + i) = s1[i];
 
-	for (j = 1; s2[j] != '\0'; j++)
+	for (j = 0; s2[j] != '\0'; j++)
 		*(ptr_concat_str + (s1_len + j)) = s2[j];
 	
 	return (ptr_concat_str);
