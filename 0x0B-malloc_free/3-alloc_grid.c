@@ -14,16 +14,12 @@ int **alloc_grid(int width, int height)
 	int **ptr_zeros;
 
 	if (width <= 0 || height <= 0)
-	{
 		return (NULL);
-	}
 
 	total_elements = width * height;
 
 	if ((sizeof(int) * total_elements) < (size_t)(4 * total_elements))
-	{
 		return (NULL);
-	}
 
 	ptr_zeros = (int **)malloc(sizeof(int *) * height);
 
@@ -37,14 +33,14 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		ptr_zeros[i] = (int *)malloc(sizeof(int) * width);
-		
+
 		if (ptr_zeros[i] == NULL)
 		{
 			for (k = 0; k < i; k++)
 			{
 				free(ptr_zeros[k]);
 			}
-				
+
 			free(ptr_zeros);
 			return (NULL);
 		}
