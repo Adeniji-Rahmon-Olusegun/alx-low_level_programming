@@ -46,7 +46,7 @@ int **alloc_grid(int width, int height)
 				return (NULL);
 			}
 
-			*(ptr_zeros[i] + j) = 0;
+			ptr_zeros[i][j] = 0;
 		}
 	}
 	return (ptr_zeros);
