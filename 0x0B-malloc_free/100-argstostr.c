@@ -33,7 +33,6 @@ char *argstostr(int ac, char **av)
 
 	if (ptr_arg == NULL)
 	{
-		free(ptr_arg);
 		return (NULL);
 	}
 
