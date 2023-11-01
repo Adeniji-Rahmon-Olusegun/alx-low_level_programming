@@ -32,8 +32,10 @@ char *argstostr(int ac, char **av)
 	ptr_arg = (char *)malloc(sizeof(char) * (total_str_len + ac - 2));
 
 	if (ptr_arg == NULL)
+	{
+		free(ptr_arg);
 		return (NULL);
-
+	}
 	for (i = 0; i < ac; i++)
 	{
 		k = 0;
