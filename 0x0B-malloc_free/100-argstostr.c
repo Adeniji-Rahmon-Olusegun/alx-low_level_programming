@@ -29,13 +29,10 @@ char *argstostr(int ac, char **av)
 		total_str_len += sum;
 	}
 
-	ptr_arg = (char *)malloc(sizeof(char) * total_str_len + ac);
+	ptr_arg = (char *)malloc(sizeof(char) * total_str_len + ac - 1);
 
 	if (ptr_arg == NULL)
-	{
-		free(ptr_arg);
 		return (NULL);
-	}
 
 	for (i = 0; i < ac; i++)
 	{
