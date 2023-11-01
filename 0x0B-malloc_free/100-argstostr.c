@@ -32,6 +32,7 @@ char *argstostr(int ac, char **av)
 	ptr_arg = (char *)malloc(sizeof(char) * total_str_len + ac);
 
 	if (ptr_arg == NULL)
+		free(ptr_arg);
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
@@ -47,6 +48,5 @@ char *argstostr(int ac, char **av)
 		*(ptr_arg + counter) = '\n';
 		counter++;
 	}
-
 	return (ptr_arg);
 }
