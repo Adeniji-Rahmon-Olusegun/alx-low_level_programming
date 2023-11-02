@@ -13,8 +13,9 @@
 
 int *array_range(int min, int max)
 {
+	int i;
 	int *ptr_array;
-	int i, arr_counter, index;
+	unsigned int arr_counter, index;
 
 	if (min > max)
 	{
