@@ -11,8 +11,8 @@
 
 int main(int argc, char *argv[])
 {
-	int *ptr;
-	int result;
+	long int *ptr;
+	long int result;
 
 	if ((argc - 1) < 2 || (argc - 1) > 2)
 	{
@@ -21,16 +21,16 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	ptr = (int *)malloc(sizeof(int) * 2);
+	ptr = (long int *)malloc(sizeof(long int) * 2);
 
-	if (!(isdigit(atoi(argv[1]))) && !(isdigit(atoi(argv[2]))))
+	if (!(isdigit(atol(argv[1]))) && !(isdigit(atol(argv[2]))))
 	{
-		*(ptr + 0) = atoi(argv[1]);
-		*(ptr + 1) = atoi(argv[2]);
+		*(ptr + 0) = atol(argv[1]);
+		*(ptr + 1) = atol(argv[2]);
 
-		result = *(ptr + 0) * *(ptr + 1);
+		result = (*(ptr + 0)) * (*(ptr + 1));
 
-		printf("%d\n", result);
+		printf("%ld\n", result);
 	}
 	else
 	{
