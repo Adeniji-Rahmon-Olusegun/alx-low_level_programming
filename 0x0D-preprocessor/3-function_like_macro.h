@@ -1,6 +1,5 @@
-#ifndef ABS(x)
-#define ABS(x) if (x < 0)\
-			return (-(x));\
-		else\
-			return (x);
+#ifndef ABS
+#define ABS(x) (x < 0) ? -(x) : (x)
+
+
 #endif
