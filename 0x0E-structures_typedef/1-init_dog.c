@@ -28,6 +28,7 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 
 	d->name = (char *)malloc(sizeof(char) * (len_name + 1));
 	d->owner = (char *)malloc(sizeof(char) * (len_owner + 1));
+	d->age = (float *)malloc(sizeof(float) * 1);
 
 	if (d->name != NULL)
 	{
@@ -39,7 +40,8 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 		d->name[i] = '\0';
 	}
 
-	d->age = age;
+	if (d->age != NULL)
+		d->age = age;
 
 	if (d->owner != NULL)
 	{
@@ -50,4 +52,7 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 
 		d->owner[j] = '\0';
 	}
+	free(d->name);
+	free(d->owner);
+	free(d->age);
 }
