@@ -11,7 +11,7 @@
  * Return: struct
  */
 
-dog_t *new_dog(char name, float age, char owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	int i, j;
 	dog_t *new_dog;
@@ -37,13 +37,13 @@ dog_t *new_dog(char name, float age, char owner)
 		return (NULL);
 
 	for (i = 0; name[i] != '\0'; i++)
-		new_dog->name = name[i];
+		new_dog->name[j] = name[i];
 	new_dog->name[i] = '\0';
 
 	new_dog->age = age;
 
 	for (j = 0; owner[j] != '\0'; j++)
-		new_dog->owner = owner[j];
+		new_dog->owner[j] = owner[j];
 	new_dog->owner[j] = '\0';
 
 	return (new_dog);
