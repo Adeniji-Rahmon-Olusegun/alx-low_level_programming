@@ -36,7 +36,7 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 			d->name[i] = name[i];
 		}
 
-		d->name[i] = '\0;
+		d->name[i] = '\0';
 	}
 
 	if (d->owner != NULL)
