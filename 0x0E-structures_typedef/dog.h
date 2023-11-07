@@ -1,5 +1,5 @@
-#ifndef FIRST_STRUCT_H
-#define FIRST_STRUCT_H
+#ifndef F_STRUCT_H
+#define F_STRUCT_H
 
 /**
  * struct dog - creates a template for object dog
