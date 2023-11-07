@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef FIRST_STRUCT_H
+#define FIRST_STRUCT_H
 
 /**
  * struct dog - creates a template for object dog
@@ -18,5 +18,4 @@ struct dog
 	char *owner	
 };
 
-void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
