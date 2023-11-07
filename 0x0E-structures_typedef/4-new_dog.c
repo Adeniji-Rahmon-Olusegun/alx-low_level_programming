@@ -22,12 +22,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	for (j = 0; owner[j] != '\0'; j++)
 		owner_len++;
-
+	/*
 	ptr_dog = (dog_t *)malloc(sizeof(dog_t));
 
 	if (ptr_dog == NULL)
 		return (NULL);
-
+	*/
 	ptr_dog->name = (char *)malloc(sizeof(char) * (name_len + 1));
 	ptr_dog->owner = (char *)malloc(sizeof(char) * (owner_len + 1));
 
