@@ -34,11 +34,15 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 			tracker += 1;
 		}
-	}
 
-	if (tracker == size)
+		if (tracker == size)
+		{
+			return (-1);
+		}
+	}
+	else if (array == NULL || cmp == NULL)
 	{
-		return (-1);
+		return (NULL);
 	}
 
 	return (idx);
