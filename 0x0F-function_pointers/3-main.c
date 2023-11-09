@@ -48,8 +48,7 @@ int main(int argc, char *argv[])
 
 	arithmetic = get_op_func(argv[2]);
 
-	if (arithmetic != NULL)
-		result = (*arithmetic)(arg1, arg2);
+	result = (*arithmetic)(arg1, arg2);
 
 	printf("%d\n", result);
 
