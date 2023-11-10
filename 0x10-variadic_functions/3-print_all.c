@@ -38,8 +38,7 @@ void print_all(const char * const format, ...)
 				string_checker = va_arg(anything_arg, char *);
 				if (string_checker == NULL || strcmp(string_checker, "") == 0)
 				{
-					printf("(nil)");
-					break;
+					string_checker = "(nil)";
 				}
 				printf("%s", string_checker);
 				break;
