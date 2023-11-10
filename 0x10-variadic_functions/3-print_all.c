@@ -8,6 +8,7 @@
  * print_all - prints anything
  *
  * @format: format specifier
+ * @...: elipse
  *
  * Return: void
  */
