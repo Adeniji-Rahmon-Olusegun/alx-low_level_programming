@@ -46,9 +46,8 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		f_index++;
-		if (format[f_index + 1] != '\0' && (format[f_index] == 'c' ||
-		    format[f_index] == 'i' || format[f_index] == 'f' ||
-		    format[f_index] == 's'))
+		if (format[f_index] == 'c' || format[f_index] == 'i' ||
+		    format[f_index] == 'f' || format[f_index] == 's')
 		{
 			printf(", ");
 		}
