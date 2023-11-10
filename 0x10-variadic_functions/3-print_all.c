@@ -18,7 +18,6 @@ void print_all(const char * const format, ...)
 	va_list anything_arg;
 
 	va_start(anything_arg, format);
-
 	f_index = 0;
 
 	while (format && format[f_index] != '\0')
@@ -36,8 +35,11 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				string_checker = va_arg(anything_arg, char *);
-				if (string_checker == NULL)
+				if (string_checker == NULL || string_checker == "")
+				{
 					printf("(nil)");
+					break;
+				}
 				printf("%s", string_checker);
 				break;
 		}
