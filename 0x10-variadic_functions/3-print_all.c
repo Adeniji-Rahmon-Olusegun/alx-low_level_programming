@@ -20,7 +20,6 @@ void print_all(const char * const format, ...)
 
 	va_start(anything_arg, format);
 	f_index = 0;
-
 	while (format && format[f_index] != '\0')
 	{
 		switch (format[f_index])
@@ -43,9 +42,10 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", string_checker);
 				break;
+			default:
+				break;
 		}
 		f_index++;
-
 		if (format[f_index] == 'c' || format[f_index] == 'i' ||
 		    format[f_index] == 'f' || format[f_index] == 's')
 		{
