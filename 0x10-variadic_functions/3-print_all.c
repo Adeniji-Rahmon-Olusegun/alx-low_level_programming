@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 
 /**
  * print_all - prints anything
@@ -35,7 +36,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				string_checker = va_arg(anything_arg, char *);
-				if (string_checker == NULL)
+				if (string_checker == NULL || strcmp(string_checker, "") == 0)
 				{
 					printf("(nil)");
 					break;
