@@ -45,13 +45,13 @@ void print_all(const char * const format, ...)
 			default:
 				break;
 		}
-		f_index++;
-		if ((format[f_index] == 'c' || format[f_index] == 'i' ||
-		    format[f_index] == 'f' || format[f_index] == 's') &&
+		if ((format[f_index + 1] == 'c' || format[f_index + 1] == 'i' ||
+		    format[f_index + 1] == 'f' || format[f_index + 1] == 's') &&
 		    format[f_index + 1] != '\0')
 		{
 			printf(", ");
 		}
+		f_index++;
 	}
 	va_end(anything_arg);
 	printf("\n");
