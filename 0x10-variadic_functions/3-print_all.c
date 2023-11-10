@@ -35,7 +35,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				string_checker = va_arg(anything_arg, char *);
-				if (string_checker == NULL || string_checker == "")
+				if (string_checker == NULL)
 				{
 					printf("(nil)");
 					break;
