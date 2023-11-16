@@ -22,10 +22,10 @@ size_t print_list(const list_t *h)
 	{
 		if ((temp_var->str) == NULL)
 		{
-			printf("[%d] %s\n", 0, "(nil)");
+			printf("[0] (nil)\n");
 		}
-
-		printf("[%d] %s\n", temp_var->len, temp_var->str);
+		else
+			printf("[%u] %s\n", temp_var->len, temp_var->str);
 
 		temp_var = temp_var->next;
 
