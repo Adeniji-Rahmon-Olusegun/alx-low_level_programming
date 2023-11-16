@@ -23,12 +23,10 @@ list_t *add_node(list_t **head, const char *str)
 	for (i = 0; duplicate_str[i] != '\0'; i++)
 		count_dup_str++;
 
-	fresh_node = (list_t *)malloc(sizeof(list_t));
+	fresh_node = malloc(sizeof(list_t));
 
 	if (fresh_node == NULL)
 		return (NULL);
-	if (*head == NULL)
-		fresh_node->next = NULL;
 
 	fresh_node->str = duplicate_str;
 	fresh_node->len = count_dup_str;
