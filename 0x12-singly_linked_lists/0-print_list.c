@@ -33,6 +33,5 @@ size_t print_list(const list_t *h)
 
 		counts_of_nodes++;
 	}
-	free(temp_var);
 	return (counts_of_nodes);
 }
