@@ -13,9 +13,8 @@ size_t print_list(const list_t *h)
 {
 	const list_t *temp_var;
 	size_t counts_of_nodes;
-	
-	counts_of_nodes = 0;
 
+	counts_of_nodes = 0;
 	temp_var = h;
 
 	while (temp_var != NULL)
