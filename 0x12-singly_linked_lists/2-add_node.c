@@ -20,6 +20,9 @@ list_t *add_node(list_t **head, const char *str)
 
 	count_dup_str = 0;
 
+	if (head == NULL)
+		return (NULL);
+
 	for (i = 0; duplicate_str[i] != '\0'; i++)
 		count_dup_str++;
 
