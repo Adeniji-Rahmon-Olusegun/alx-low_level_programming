@@ -11,21 +11,24 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t counts_of_nodes = 0;
+	const list_t *temp_var;
+	size_t counts_of_nodes;
+	
+	counts_of_nodes = 0;
 
-	if (h == NULL)
+	if (temp_var == NULL)
 		return (1);
 
-	while (h != NULL)
+	while (temp_var != NULL)
 	{
-		if ((h->str) == NULL)
+		if ((temp_var->str) == NULL)
 		{
-			printf("[0] (nil)\n");
+			printf("[%u] %s\n", 0, "(nil)");
 		}
 
-		printf("[%u] %s\n", h->len, h->str);
+		printf("[%u] %s\n", temp_var->len, temp_var->str);
 
-		h = h->next;
+		temp_var = temp_var->next;
 
 		counts_of_nodes++;
 	}
