@@ -14,8 +14,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	char *duplicate_str;
 	size_t i, str_length;
-	list_t *fresh_node;
-	list_t **temp_var;
+	list_t *fresh_node, *temp_var;
 
 	if (head == NULL)
 		return (NULL);
@@ -30,10 +29,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	fresh_node = (list_t *)malloc(sizeof(list_t));
 
 	if (fresh_node == NULL)
-	{
-		free(duplicate_str);
 		return (NULL);
-	}
 
 	fresh_node->str = duplicate_str;
 	fresh_node->len = str_length;
@@ -45,9 +41,9 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (*head);
 	}
 
-	temp_var = head;
-	while ((*temp_var)->next != NULL)
-		temp_var = &(*temp_var)->next;
-	(*temp_var)->next = fresh_node;
+	temp_var = *head;
+	while (temp_var->next != NULL)
+		temp_var = temp_var->next;
+	temp_var->next = fresh_node;
 	return (fresh_node);
 }
