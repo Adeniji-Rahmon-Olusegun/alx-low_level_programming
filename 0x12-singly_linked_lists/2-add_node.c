@@ -17,7 +17,9 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (head == NULL)
 		return (NULL);
+
 	duplicate_str = strdup(str);
+
 	if (duplicate_str == NULL)
 		return (NULL);
 	count_dup_str = 0;
