@@ -30,7 +30,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	fresh_node = (list_t *)malloc(sizeof(list_t));
 
 	if (fresh_node == NULL)
+	{
+		free(duplicate_str);
 		return (NULL);
+	}
 
 	fresh_node->str = duplicate_str;
 	fresh_node->len = str_length;
