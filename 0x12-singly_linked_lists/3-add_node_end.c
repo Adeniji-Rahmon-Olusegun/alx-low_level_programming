@@ -18,8 +18,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (head == NULL)
 		return (NULL);
-	if (str == NULL)
-		return (NULL);
+
 	str_length = 0;
 
 	duplicate_str = strdup(str);
@@ -31,7 +30,11 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (fresh_node == NULL)
 		return (NULL);
-
+	if (duplicate_str == NULL)
+	{
+		free(fresh_node);
+		return (NULL);
+	}
 	fresh_node->str = duplicate_str;
 	if (fresh_node->str == NULL)
 	{
