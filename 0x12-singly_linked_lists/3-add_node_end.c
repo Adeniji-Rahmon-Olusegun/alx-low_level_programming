@@ -19,12 +19,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (head == NULL)
 		return (NULL);
 	str_length = 0;
+
 	duplicate_str = strdup(str);
+
 	for (i = 0; duplicate_str[i] != '\0'; i++)
 		str_length++;
-
-	if (duplicate_str == NULL)
-		return (NULL);
 
 	fresh_node = (list_t *)malloc(sizeof(list_t));
 
