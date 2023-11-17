@@ -28,9 +28,6 @@ list_t *add_node(list_t **head, const char *str)
 	if (fresh_node == NULL)
 		return (NULL);
 
-	fresh_node->str = duplicate_str;
-	fresh_node->len = count_dup_str;
-
 	if (*head == NULL)
 		fresh_node->next = NULL;
 	else
