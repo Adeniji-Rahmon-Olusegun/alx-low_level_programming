@@ -36,23 +36,32 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (*head);
 	}
 
-	node_count = listint_count(*head);
-
-	if (node_count < idx)
-		return (NULL);
-
-	temp_var = previousNode = *head;
-
-	j = 0;
-	while (j < (idx - 1))
+	if (idx == 0)
 	{
-		previousNode = previousNode->next;
-		temp_var = temp_var->next;
-		j++;
+		temp_var = *head;
+		fresh_node->next = temp_var;
+		*head = fresh_node;
 	}
-	temp_var = temp_var->next;
-	previousNode->next = fresh_node;
-	fresh_node->next = temp_var;
+	else
+	{
+		node_count = listint_count(*head);
+
+		if (node_count < idx)
+			return (NULL);
+
+		temp_var = previousNode = *head;
+
+		j = 0;
+		while (j < (idx - 1))
+		{
+			previousNode = previousNode->next;
+			temp_var = temp_var->next;
+			j++;
+		}
+		temp_var = temp_var->next;
+		previousNode->next = fresh_node;
+		fresh_node->next = temp_var;
+	}
 
 	return (fresh_node);
 }
