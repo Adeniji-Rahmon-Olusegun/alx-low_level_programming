@@ -12,7 +12,7 @@
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i;
+	unsigned int i, node_length;
 	listint_t *temp_var;
 
 	if (head == NULL)
@@ -20,6 +20,11 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (index == 0)
 		return (head);
+
+	node_length = listint_len(head);
+
+	if (index > node_length)
+		return (NULL);
 
 	temp_var = head;
 
