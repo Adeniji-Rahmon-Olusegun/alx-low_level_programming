@@ -18,6 +18,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int *ptr_binary;
 	int i, bit_checker, bit_size, n_size, desired_bit, idx;
 
+	if (n < 0 || index < 0)
+		return (-1);
 	if (index >= n)
 		return (-1);
 
