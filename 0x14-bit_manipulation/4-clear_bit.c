@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * set_bit - set the value of a bit to 1
+ * clear_bit - set the value of a bit to 0
  *
  * @n: pointer to the decimal value
  * @index: index where the change will be made
@@ -9,7 +9,7 @@
  * Return: 1 if sucess and -1 otherwise
  */
 
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int bit_size;
 	unsigned long int mask_for_manipulation;
@@ -24,8 +24,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	}
 
-	mask_for_manipulation = 1 << index;
-	*n = *n | mask_for_manipulation;
+	mask_for_manipulation = ~(1 << index);
+	*n = *n & mask_for_manipulation;
 
 	return (1);
 }
