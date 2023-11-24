@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 	int binary_power;
 	unsigned long int value_update, binary_base;
 
-	binary_power = 12;
+	binary_power = 15;
 	value_update = n;
 
 	if (n == 0)
