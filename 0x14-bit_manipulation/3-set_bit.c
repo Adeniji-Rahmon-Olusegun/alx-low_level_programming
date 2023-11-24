@@ -13,20 +13,19 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int bit_size;
 	unsigned long int mask_for_manipulation;
-	
+
 	if (n == NULL)
 		return (-1);
 	
 	bit_size = sizeof(unsigned long int) * 8;
-	
+
 	if (index > bit_size)
 	{
-		*n = *n;
-		return (1);
+		return (-1);
 	}
 
 	mask_for_manipulation = 1 << index;
 	*n = *n | mask_for_manipulation;
-	
+
 	return (1);
 }
