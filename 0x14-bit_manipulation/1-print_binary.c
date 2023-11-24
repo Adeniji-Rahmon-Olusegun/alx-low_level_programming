@@ -11,34 +11,25 @@
 
 void print_binary(unsigned long int n)
 {
-	int binary_power;
-	unsigned long int value_update, binary_base;
+	unsigned long isolated_bit;
+	int bit_checker, required_bits, i;
 
-	binary_power = 15;
-	value_update = n;
+	bit_checker = 0;
 
-	if (n == 0)
-		_putchar('0' + 0);
-	else if (n == 1)
-		_putchar('0' + 1);
-	else
+	required_bits = sizeof(unsigned long int) * 8;
+
+	for (i = required_bits - 1; i >= 0; i--)
 	{
-		while (binary_power != -1)
+		isolated_bit = (n >> i) & 1;
+
+		if (isolated_bit)
 		{
-			binary_base = 1 << binary_power;
-
-			if (binary_base <= value_update)
-			{
-				value_update -= binary_base;
-				_putchar('0' + 1);
-			}
-			else
-			{
-				if (value_update != n)
-					_putchar('0' + 0);
-			}
-
-			binary_power--;
+			_putchar('0' + 1);
+			bit_checker = 1;
+		}
+		else if (bit_checker || i == 0)
+		{
+			_putchar('0' + 0);
 		}
 	}
 }
