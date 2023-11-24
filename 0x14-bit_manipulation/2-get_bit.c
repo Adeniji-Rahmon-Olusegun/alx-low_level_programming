@@ -20,7 +20,8 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (index >= n)
 		return (-1);
-
+	if (index > (sizeof(unsigned long int)))
+		return (-1);
 	n_size = get_nsize(n);
 	bit_checker = 0;
 
