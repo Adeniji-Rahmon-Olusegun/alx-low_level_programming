@@ -37,7 +37,7 @@ int create_file(const char *filename, char *text_content)
 			string_length++;
 			index++;
 		}
-	
+
 		byte_to_write = write(file_dr, text_content, string_length);
 
 		if (byte_to_write == -1)
