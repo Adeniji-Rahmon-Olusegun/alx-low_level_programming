@@ -32,12 +32,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	byte_to_read = read(file_dr, buffer, letters);
-	
+
 	if (byte_to_read == -1)
 		return (0);
 
 	byte_tracker = byte_to_read;
-	
+
 	byte_to_write = write(STDOUT_FILENO, buffer, byte_to_read);
 	if (byte_to_read == -1 || byte_to_write < byte_to_read)
 		return (0);
