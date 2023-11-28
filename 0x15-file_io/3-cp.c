@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdio.h>
 
+int check_read_write(char *filename, char mode);
+void check_closeFD(int file_dr);
+
 /**
  * main - copies content o a file to another
  * file
@@ -22,21 +25,12 @@ int main(int argc, char *argv[])
 		dprintf(STDOUT_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
+	
 	buffer = (char *)malloc(1024);
-	file_dr1 = open(argv[1], O_RDWR);
-	if (file_dr1 == -1)
-	{
-		dprintf(STDOUT_FILENO, "%s %s\n", "Error: Can't read from file", argv[1]);
-		exit(98);
-	}
 
-	file_dr2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_dr1 = check_read_write(argv[1], 'R');
+	file_dr2 = check_read_write(argv[2], 'W');
 
-	if (file_dr2 == -1)
-	{
-		dprintf(STDOUT_FILENO, "%s %s\n", "Error: Can't write to", argv[2]);
-		exit(99);
-	}
 	while (byte_to_read != 0)
 	{
 		byte_to_read = read(file_dr1, buffer, 1024);
@@ -52,5 +46,68 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+
+	check_closeFD(file_dr1);
+	check_closeFD(file_dr2);
+
 	return (0);
+}
+
+/**
+ * check_read_write - checks the status of the
+ * file descriptor
+ *
+ * @filename: name of the file
+ * @mode: read or write
+ *
+ * Return: file descriptor
+ */
+
+int check_read_write(char *filename, char mode)
+{
+	int file_dr;
+	
+	if (mode == 'R')
+	{
+		file_dr = open(filename, O_RDWR);
+
+		if (file_dr == -1)
+		{
+			dprintf(STDOUT_FILENO, "%s %s\n", "Error: Can't read from file", filename);
+			exit(98);
+		}
+
+		return (file_dr);
+	}
+
+	file_dr = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0664);
+
+	if (file_dr == -1)
+	{
+		dprintf(STDOUT_FILENO, "%s %s\n", "Error: Can't write to", filename);
+		exit(99);
+	}
+
+	return (file_dr);
+}
+
+/**
+ * check_closeFD - closes file descriptor
+ *
+ * @file_dr: file descriptor
+ * 
+ * Return: void
+ */
+
+void check_closeFD(int file_dr)
+{
+	int close_val;
+
+	close_val = close(file_dr);
+
+	if (close_val == -1)
+	{
+		dprintf(STDOUT_FILENO, "%s %d\n", "Error: Can't close fd", file_dr);
+		exit(100);
+	}
 }
