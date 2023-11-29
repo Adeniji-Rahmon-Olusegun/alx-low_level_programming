@@ -29,6 +29,8 @@ int main(int argc, char *argv[])
 	file_dr1 = check_read_write(argv[1], 'R');
 	file_dr2 = check_read_write(argv[2], 'W');
 
+	byte_to_read = 1;
+
 	while (byte_to_read > 0)
 	{
 		byte_to_read = read(file_dr1, buffer, 1024);
