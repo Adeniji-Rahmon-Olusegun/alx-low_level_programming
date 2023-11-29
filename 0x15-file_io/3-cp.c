@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 
-int check_read_write(char *filename, char mode);
+int check_read_write(const char *filename, char mode);
 void check_closeFD(int file_dr);
 
 /**
@@ -87,7 +87,7 @@ int check_read_write(char const *filename, char mode)
 
 		if (file_dr == -1)
 		{
-			file_dr = open(filename, O_WRONLY | O_CREATE | O_TRUNC, 0664);
+			file_dr = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 			if (file_dr == -1)
 			{
