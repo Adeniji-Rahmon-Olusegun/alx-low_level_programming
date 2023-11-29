@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "%s\n", "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 		if (byte_to_read == -1)
 		{
-			dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
 		if (byte_to_write == -1)
 		{
-			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
@@ -78,7 +78,7 @@ int check_read_write(char const *filename, char mode)
 
 		if (file_dr == -1)
 		{
-			dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", filename);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 			exit(98);
 		}
 
@@ -94,7 +94,7 @@ int check_read_write(char const *filename, char mode)
 
 			if (file_dr == -1)
 			{
-				dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", filename);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 				exit(99);
 			}
 		}
@@ -119,7 +119,7 @@ void check_closeFD(int file_dr)
 
 	if (close_val == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", file_dr);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_dr);
 		exit(100);
 	}
 }
