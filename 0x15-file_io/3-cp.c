@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
  * Return: file descriptor
  */
 
-int check_read_write(char *filename, char mode)
+int check_read_write(char const *filename, char mode)
 {
 	ssize_t file_dr;
 	
@@ -87,7 +87,7 @@ int check_read_write(char *filename, char mode)
 
 		if (file_dr == -1)
 		{
-			file_dr = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+			file_dr = open(filename, O_WRONLY | O_CREATE | O_TRUNC, 0664);
 
 			if (file_dr == -1)
 			{
