@@ -17,7 +17,7 @@ void check_closeFD(int file_dr);
 int main(int argc, char *argv[])
 {
 	char buffer[1024];
-	ssize_t file_dr1, file_dr2;
+	int file_dr1, file_dr2;
 	ssize_t byte_to_read, byte_to_write;
 
 	if (argc != 3)
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 
 int check_read_write(char const *filename, char mode)
 {
-	ssize_t file_dr;
+	int file_dr;
 
 	file_dr = -1;
 	
