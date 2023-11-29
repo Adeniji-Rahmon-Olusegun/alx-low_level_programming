@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
 int check_read_write(char const *filename, char mode)
 {
 	ssize_t file_dr;
+
+	file_dr = -1;
 	
 	if (mode == 'R')
 	{
