@@ -26,4 +26,5 @@ void free_dlistint(dlistint_t *head)
 		free(del_node);
 	}
 	free(temp_var);
+	free(head);
 }
