@@ -11,9 +11,9 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	int count_ndll;
+	size_t count_ndll;
 
-	dlistint_t *temp_var;
+	dlistint_t const *temp_var;
 
 	temp_var = h;
 
