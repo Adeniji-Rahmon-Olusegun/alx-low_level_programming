@@ -22,9 +22,9 @@ void free_dlistint(dlistint_t *head)
 		del_node = head;
 		temp_var = temp_var->next;
 		head = head->next;
-		head->prev = NULL;
+		if (head != NULL)
+			head->prev = NULL;
 		free(del_node);
 	}
 	free(temp_var);
-	free(head);
 }
