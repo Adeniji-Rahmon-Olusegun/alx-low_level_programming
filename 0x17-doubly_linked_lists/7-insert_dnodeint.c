@@ -103,7 +103,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		temp_var = *h;
 
-		while (position_count < idx - 1)
+		while (position_count < idx - 2)
 		{
 			temp_var = temp_var->next;
 			position_count++;
