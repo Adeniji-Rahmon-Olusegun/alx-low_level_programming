@@ -45,7 +45,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	dll_length = dlistint_len(*head);
 
-	if (index >= dll_length)
+	if (index > dll_length)
 		return (-1);
 	if (index == 0)
 	{
