@@ -54,6 +54,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (*head != NULL)
 			(*head)->prev = NULL;
 		free(temp_var);
+		return (1);
 	}
 	else
 	{
@@ -72,5 +73,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(temp_var);
 	}
 
-	return (0);
+	return (1);
 }
