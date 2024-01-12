@@ -90,11 +90,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx > dll_length)
 		return (NULL);
 	if (idx == 0)
-		add_dnodeintd(h, n);
+	{
+		*h = add_dnodeintd(h, n);
+		return (*h);
+	}
 	else if ((*h)->next == NULL)
-		add_dnodeint_end(h, n);
+	{
+		fresh_node = add_dnodeint_end(h, n);
+		return (fresh_node);
+	}
 	else if (idx == dll_length)
-		add_dnodeint_end(h, n);
+	{
+		fresh_node = add_dnodeint_end(h, n);
+		return (fresh_node);
+	}
 	else
 	{
 		fresh_node = (dlistint_t *)malloc(sizeof(dlistint_t));
