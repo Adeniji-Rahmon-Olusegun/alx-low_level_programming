@@ -83,12 +83,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *temp_var, *fresh_node;
 	unsigned int position_count, dll_length;
 
+	if (h == NULL)
+		return (NULL);
 	dll_length = get_dnodeint_len(*h);
 
 	if (idx > dll_length)
 		return (NULL);
 	if (idx == 0)
 		add_dnodeintd(h, n);
+	else if ((*h)->next == NULL)
+		add_dnodeint_end(h, n);
 	else
 	{
 		fresh_node = (dlistint_t *)malloc(sizeof(dlistint_t));
@@ -103,7 +107,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		temp_var = *h;
 
-		while (position_count < idx - 2)
+		while (position_count < idx - 1)
 		{
 			temp_var = temp_var->next;
 			position_count++;
