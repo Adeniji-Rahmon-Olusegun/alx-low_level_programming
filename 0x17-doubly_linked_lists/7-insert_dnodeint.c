@@ -95,12 +95,12 @@ dlistint_t *condition_check(dlistint_t **h, unsigned int idx, int n)
 		*h = add_dnodeintd(h, n);
 		return (*h);
 	}
-	else if ((*h)->next == NULL)
+	if ((*h)->next == NULL)
 	{
 		fresh_node = add_dnodeint_end(h, n);
 		return (fresh_node);
 	}
-	else if (idx == dll_length)
+	if (idx == dll_length)
 		fresh_node = add_dnodeint_end(h, n);
 	return (fresh_node);
 }
