@@ -50,7 +50,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	idx = 0;
 	temp_var = head;
 
-	while (idx <= index)
+	while (idx < index)
 	{
 		temp_var = temp_var->next;
 		idx++;
