@@ -69,7 +69,19 @@ dlistint_t *add_dnodeintd(dlistint_t **head, const int n)
 }
 
 /**
- * condition_check - checks for certain conditions
+ * node_creation - creates new node
+ *
+ * @h: pointer to the first node of the double linked list
+ * @idx: position of insertion
+ * @n: data to be stored in node
+ *
+ * Return: pointer to the new node
+ */
+
+dlistint_t *node_creation(dlistint_t **h, unsigned int idx, int n);
+
+/**
+ * insert_dnodeint_at_index - inserts a new node at a given position
  *
  * @h: pointer to the first node of the double linked list
  * @idx: position of insertion
@@ -78,7 +90,7 @@ dlistint_t *add_dnodeintd(dlistint_t **head, const int n)
  * Return: pointer
  */
 
-dlistint_t *condition_check(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *fresh_node;
 	unsigned int dll_length;
@@ -101,7 +113,13 @@ dlistint_t *condition_check(dlistint_t **h, unsigned int idx, int n)
 		return (fresh_node);
 	}
 	if (idx == dll_length)
+	{
 		fresh_node = add_dnodeint_end(h, n);
+		return (fresh_node);
+	}
+
+	fresh_node = node_creation(h, idx, n);
+
 	return (fresh_node);
 }
 
@@ -115,12 +133,10 @@ dlistint_t *condition_check(dlistint_t **h, unsigned int idx, int n)
  * Return: pointer to the new node
  */
 
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+dlistint_t *node_creation(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *temp_var, *fresh_node;
 	unsigned int position_count;
-
-	condition_check(h, idx, n);
 
 	fresh_node = (dlistint_t *)malloc(sizeof(dlistint_t));
 
