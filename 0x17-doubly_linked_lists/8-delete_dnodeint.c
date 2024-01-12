@@ -1,45 +1,29 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - adds a node at the beginning
- * of a doubly linked list
+ * dlistint_len - obtains the length of a doubly
+ * linked list.
  *
- * @head: address of the head
- * @n: data value to be stored in new node
+ * @h: head of the list
  *
- * Return: Address to the new node
+ * Return: The length of the list
  */
 
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+size_t dlistint_len(const dlistint_t *h)
 {
-	dlistint_t *fresh_node;
+	size_t count_ndll;
+	dlistint_t const *temp_var;
 
-	if (head == NULL)
-		return (NULL);
+	count_ndll = 0;
+	temp_var = h;
 
-	fresh_node = (dlistint_t *)malloc(sizeof(dlistint_t));
-
-	if (fresh_node == NULL)
-		return (NULL);
-
-	if (*head == NULL)
+	while (temp_var != NULL)
 	{
-		fresh_node->n = n;
-		fresh_node->prev = NULL;
-		fresh_node->next = NULL;
-		*head = fresh_node;
-		return (fresh_node);
+		count_ndll++;
+		temp_var = temp_var->next;
 	}
 
-	fresh_node->n = n;
-	fresh_node->prev = NULL;
-	fresh_node->next = NULL;
-
-	(*head)->prev = fresh_node;
-	fresh_node->next = *head;
-	*head = fresh_node;
-
-	return (fresh_node);
+	return (count_ndll);
 }
 
 /**
