@@ -68,15 +68,6 @@ dlistint_t *add_dnodeintd(dlistint_t **head, const int n)
 	return (fresh_node);
 }
 
-/**
- * node_creation - creates new node
- *
- * @h: pointer to the first node of the double linked list
- * @idx: position of insertion
- * @n: data to be stored in node
- *
- * Return: pointer to the new node
- */
 
 dlistint_t *node_creation(dlistint_t **h, unsigned int idx, int n);
 
@@ -124,7 +115,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 }
 
 /**
- * insert_dnodeint_at_index - inserts a new node at a given position
+ * node_creation - creates new node
  *
  * @h: pointer to the first node of the double linked list
  * @idx: position of insertion
