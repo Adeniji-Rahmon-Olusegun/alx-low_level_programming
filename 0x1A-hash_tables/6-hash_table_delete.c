@@ -15,13 +15,13 @@ void hash_table_delete(hash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-	
-	if (ht->array == NULL|| ht->size == 0)
+
+	if (ht->array == NULL || ht->size == 0)
 	{
 		free(ht);
 		return;
 	}
-	
+
 	for (idx = 0; idx < ht->size; idx++)
 	{
 		temp = ht->array[idx];
@@ -35,6 +35,7 @@ void hash_table_delete(hash_table_t *ht)
 			temp = next_n;
 		}
 	}
+	free(next_n);
 	free(ht->array);
 	free(ht);
 }
