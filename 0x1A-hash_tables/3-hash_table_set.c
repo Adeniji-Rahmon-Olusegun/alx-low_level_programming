@@ -25,18 +25,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht_nnode == NULL)
 		return (0);
 
-	ht_idx = key_index(key, ht->size);
+	ht_idx = key_index((const unsigned char *)key, ht->size);
 	ht_nnode->key = strdup(key);
-	ht_node->key = strdup(value);
+	ht_nnode->key = strdup(value);
 	ht_nnode->next = NULL;
 
-	if (ht[ht_idx] == NULL)
+	if (ht->array[ht_idx] == NULL)
 	{
 		ht->array[ht_idx] = ht_nnode;
 		return (1);
 	}
 
-	ht[0] = ht_nnode;
+	ht->array[0] = ht_nnode;
 
 	return (1);
 }
